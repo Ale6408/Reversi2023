@@ -1,12 +1,30 @@
 public class CheckerPiece extends Piece {
-    private int color;
+    public static final int WHITE = 1;
+    public static final int BLACK = 2
     
     public CheckerPiece(int inType, int inColor) {
         super(inType);
-        color = inColor;
+    }
+    
+    public void setType(int myType){
+        type = myType;
+    }
+    
+    public getOpp(){
+        if (inType == WHITE){
+            return BLACK
+        }else if (inType == BLACK){
+            return WHITE
+        }
     }
     
     public char toChar() {
-        if (type == 1) return 'p'; else return 'k';
+        if (type == WIHTE){
+            return 'w';
+        }else if (type == BLACK){
+            return 'b';
+        }else{
+            return 'blank';
+        }
     }
 }
