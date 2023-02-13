@@ -6,6 +6,7 @@
   * @related    Board
  */
 public class BoardMoves extends Board{
+    //Field variables
     private CheckerPiece[][] pieces;
     private static final int UP = 1;
     private static final int DOWN = 2;
@@ -17,7 +18,7 @@ public class BoardMoves extends Board{
     private static final int DOWNLEFT = 8;
     
     //Constructor
-    //It buildst the board with the help of the class Board.java
+    //It builds the board with the help of the class Board.java
     //It sets the pieces in the middle to start the game
     //It sets who the first player is (white)
     public BoardMoves(){
@@ -79,6 +80,7 @@ public class BoardMoves extends Board{
         return false;
     }
     
+    //Checks to seee if the piece has a move or not
     public boolean hasMove(CheckerPiece piece){
         int i;
         for(int row = 0; row < size; row++){
@@ -93,6 +95,7 @@ public class BoardMoves extends Board{
         return false;
     }
     
+    //Sets who is playing, black or white
     public int setPlayer(int player){
         if(player == 1){
             return 2;
