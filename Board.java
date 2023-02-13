@@ -12,6 +12,7 @@ public class Board {
     // fields
     /** pieces for the board */
     private Piece[][] pieces;
+    private CheckerPiece[][] myPiece;
     /** size of the board */
     protected int size;  // not needed - can go by length but implemented instead
 
@@ -29,7 +30,7 @@ public class Board {
     /** create a board of the default size */
     public Board() {
         int row, column;
-
+        
         size = DEFAULTSIZE;
         pieces = new Piece[size][size];
         blankBoard();
@@ -126,7 +127,7 @@ public class Board {
         String tempString;
         int row, column;
 
-        tempString = null;
+        tempString = "";
         for (row = 0; row < size; row++) {
             for (column = 0; column < size; column++) {
                 tempString = tempString+pieces[row][column].toChar()+" ";
