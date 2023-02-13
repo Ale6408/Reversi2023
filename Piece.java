@@ -55,7 +55,7 @@ public class Piece {
     }
     
     public char toChar() {
-        return ' ';
+        return '-';
     }
 
     /** return a string representing a piece
