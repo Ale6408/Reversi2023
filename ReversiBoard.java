@@ -6,12 +6,12 @@
   * @related     ReversiPiece, Board
   */
 public class ReversiBoard extends Board {
-//Class Constants
+	//Class Constants
 	private static final int ROWCHANGE = 0;
-    private static final int COLCHANGE = 1;
-    private static final int ROWBOUNDARY = 2;
-    private static final int COLBOUNDARY = 2;
-    private static final int NOBOUNDARY = -1;
+	private static final int COLCHANGE = 1;
+	private static final int ROWBOUNDARY = 2;
+	private static final int COLBOUNDARY = 2;
+ 	private static final int NOBOUNDARY = -1;
   
 //Fields
 	private boolean[] dir;
@@ -19,32 +19,31 @@ public class ReversiBoard extends Board {
 //Constructor
 	public ReversiBoard() {
 		super();
-        dir = new boolean[8];
-        for(int i=0; i<8;i++) dir[i] = false;
+        	dir = new boolean[8];
+        	for(int i=0; i<8;i++) dir[i] = false;
 		setGame();
 	}
 	
 //Class Methods
 	protected void blankBoard() {
-        int row, column;
+		int row, column;
 
-        for (row = 0; row < size; row++)
-            for (column = 0; column < size; column++)
-                pieces[row][column] = new ReversiPiece(Piece.BLANK);
-
-    }
+		for (row = 0; row < size; row++)
+		    for (column = 0; column < size; column++)
+			pieces[row][column] = new ReversiPiece(Piece.BLANK);
+    	}
 	
 	public void setGame() {
-        getPiece(3,3).setType(2);
+        	getPiece(3,3).setType(2);
 		getPiece(3,4).setType(1);
 		getPiece(4,3).setType(1);
 		getPiece(4,4).setType(2);
-    }	
+    	}	
 	
 	public boolean onBoard(int x, int y) {
-        if (x> size-1 || x<0 || y> size-1 || y<0) return false;
-        return true;
-    }
+		if (x > size-1 || x < 0 || y > size-1 || y < 0) return false;
+		return true;
+	}
 	
 	public void makeMove(int row, int col, ReversiPiece piece) {
 		int color, rowStep, colStep;
